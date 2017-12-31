@@ -1,0 +1,18 @@
+module fsm_led(CLK_50M);
+
+input wire CLK_50M;
+output led_pin;
+wire timer_ms;
+wire timer_us;
+timers(CLK_50M,timer_ms,timer_us);
+
+always@( posedge timer_ms )
+begin
+	count = count + 1;
+	if( count == 1000 )
+	begin
+		led_pin <= ~led_pin; // toggle LED state
+		count = 0;
+	end
+end
+endmodule

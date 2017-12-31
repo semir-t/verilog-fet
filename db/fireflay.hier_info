@@ -1,0 +1,225 @@
+|main
+CLK_50M => CLK_50M.IN2
+Reset => ~NO_FANOUT~
+led_pin <= fsm_led:comb_149.port2
+servo_left <= servo:comb_150.port0
+servo_right <= servo:comb_151.port0
+motor_left <= motor:comb_152.port0
+motor_right <= motor:comb_153.port0
+led_test <= <GND>
+state[0] => Mux3.IN10
+state[0] => Mux2.IN10
+state[0] => Mux1.IN10
+state[0] => Mux0.IN10
+state[0] => Mux4.IN10
+state[0] => Mux5.IN10
+state[0] => Mux6.IN10
+state[0] => Mux7.IN10
+state[0] => Mux8.IN10
+state[1] => Mux3.IN9
+state[1] => Mux2.IN9
+state[1] => Mux1.IN9
+state[1] => Mux0.IN9
+state[1] => Mux4.IN9
+state[1] => Mux5.IN9
+state[1] => Mux6.IN9
+state[1] => Mux7.IN9
+state[1] => Mux8.IN9
+state[2] => Mux3.IN8
+state[2] => Mux2.IN8
+state[2] => Mux1.IN8
+state[2] => Mux0.IN8
+state[2] => Mux4.IN8
+state[2] => Mux5.IN8
+state[2] => Mux6.IN8
+state[2] => Mux7.IN8
+state[2] => Mux8.IN8
+
+
+|main|timers:comb_3
+CLK_50M => timer_us~reg0.CLK
+CLK_50M => cnt[0].CLK
+CLK_50M => cnt[1].CLK
+CLK_50M => cnt[2].CLK
+CLK_50M => cnt[3].CLK
+CLK_50M => cnt[4].CLK
+CLK_50M => cnt[5].CLK
+timer_ms <= timer_ms~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_us <= timer_us~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|fsm_led:comb_149
+CLK_50M => ~NO_FANOUT~
+timer_ms => led_pin~reg0.CLK
+timer_ms => cnt[0].CLK
+timer_ms => cnt[1].CLK
+timer_ms => cnt[2].CLK
+timer_ms => cnt[3].CLK
+timer_ms => cnt[4].CLK
+timer_ms => cnt[5].CLK
+timer_ms => cnt[6].CLK
+timer_ms => cnt[7].CLK
+timer_ms => cnt[8].CLK
+timer_ms => cnt[9].CLK
+led_pin <= led_pin~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state => led_pin.IN1
+
+
+|main|servo:comb_150
+servo_pin <= servo_pin~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_ms => angle[0].CLK
+timer_ms => angle[1].CLK
+timer_ms => angle[2].CLK
+timer_ms => angle[3].CLK
+timer_ms => angle[4].CLK
+timer_ms => angle[5].CLK
+timer_ms => angle[6].CLK
+timer_ms => angle[7].CLK
+timer_ms => servo_cnt[0].CLK
+timer_ms => servo_cnt[1].CLK
+timer_ms => servo_cnt[2].CLK
+timer_ms => servo_cnt[3].CLK
+timer_ms => servo_cnt[4].CLK
+timer_ms => servo_cnt[5].CLK
+timer_ms => servo_cnt[6].CLK
+timer_ms => servo_cnt[7].CLK
+timer_ms => current_angle[0].CLK
+timer_ms => current_angle[1].CLK
+timer_ms => current_angle[2].CLK
+timer_ms => current_angle[3].CLK
+timer_ms => current_angle[4].CLK
+timer_ms => current_angle[5].CLK
+timer_ms => current_angle[6].CLK
+timer_ms => current_angle[7].CLK
+timer_us => servo_pin~reg0.CLK
+timer_us => cnt[0].CLK
+timer_us => cnt[1].CLK
+timer_us => cnt[2].CLK
+timer_us => cnt[3].CLK
+timer_us => cnt[4].CLK
+timer_us => cnt[5].CLK
+timer_us => cnt[6].CLK
+timer_us => cnt[7].CLK
+timer_us => cnt[8].CLK
+timer_us => cnt[9].CLK
+timer_us => cnt[10].CLK
+timer_us => cnt[11].CLK
+timer_us => cnt[12].CLK
+timer_us => cnt[13].CLK
+timer_us => cnt[14].CLK
+speed[0] => Equal0.IN7
+speed[1] => Equal0.IN6
+speed[2] => Equal0.IN5
+speed[3] => Equal0.IN4
+speed[4] => Equal0.IN3
+speed[5] => Equal0.IN2
+speed[6] => Equal0.IN1
+speed[7] => Equal0.IN0
+step => Add0.IN8
+step => Add1.IN8
+
+
+|main|servo:comb_151
+servo_pin <= servo_pin~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_ms => angle[0].CLK
+timer_ms => angle[1].CLK
+timer_ms => angle[2].CLK
+timer_ms => angle[3].CLK
+timer_ms => angle[4].CLK
+timer_ms => angle[5].CLK
+timer_ms => angle[6].CLK
+timer_ms => angle[7].CLK
+timer_ms => servo_cnt[0].CLK
+timer_ms => servo_cnt[1].CLK
+timer_ms => servo_cnt[2].CLK
+timer_ms => servo_cnt[3].CLK
+timer_ms => servo_cnt[4].CLK
+timer_ms => servo_cnt[5].CLK
+timer_ms => servo_cnt[6].CLK
+timer_ms => servo_cnt[7].CLK
+timer_ms => current_angle[0].CLK
+timer_ms => current_angle[1].CLK
+timer_ms => current_angle[2].CLK
+timer_ms => current_angle[3].CLK
+timer_ms => current_angle[4].CLK
+timer_ms => current_angle[5].CLK
+timer_ms => current_angle[6].CLK
+timer_ms => current_angle[7].CLK
+timer_us => servo_pin~reg0.CLK
+timer_us => cnt[0].CLK
+timer_us => cnt[1].CLK
+timer_us => cnt[2].CLK
+timer_us => cnt[3].CLK
+timer_us => cnt[4].CLK
+timer_us => cnt[5].CLK
+timer_us => cnt[6].CLK
+timer_us => cnt[7].CLK
+timer_us => cnt[8].CLK
+timer_us => cnt[9].CLK
+timer_us => cnt[10].CLK
+timer_us => cnt[11].CLK
+timer_us => cnt[12].CLK
+timer_us => cnt[13].CLK
+timer_us => cnt[14].CLK
+speed[0] => Equal0.IN7
+speed[1] => Equal0.IN6
+speed[2] => Equal0.IN5
+speed[3] => Equal0.IN4
+speed[4] => Equal0.IN3
+speed[5] => Equal0.IN2
+speed[6] => Equal0.IN1
+speed[7] => Equal0.IN0
+step => Add0.IN8
+step => Add1.IN8
+
+
+|main|motor:comb_152
+motor_pin <= motor_pin~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_us => motor_pin~reg0.CLK
+timer_us => cnt[0].CLK
+timer_us => cnt[1].CLK
+timer_us => cnt[2].CLK
+timer_us => cnt[3].CLK
+timer_us => cnt[4].CLK
+timer_us => cnt[5].CLK
+timer_us => cnt[6].CLK
+timer_us => cnt[7].CLK
+timer_us => cnt[8].CLK
+timer_us => cnt[9].CLK
+speed[0] => LessThan0.IN10
+speed[1] => LessThan0.IN9
+speed[2] => LessThan0.IN8
+speed[3] => LessThan0.IN7
+speed[4] => LessThan0.IN6
+speed[5] => LessThan0.IN5
+speed[6] => LessThan0.IN4
+speed[7] => LessThan0.IN3
+speed[8] => LessThan0.IN2
+speed[9] => LessThan0.IN1
+
+
+|main|motor:comb_153
+motor_pin <= motor_pin~reg0.DB_MAX_OUTPUT_PORT_TYPE
+timer_us => motor_pin~reg0.CLK
+timer_us => cnt[0].CLK
+timer_us => cnt[1].CLK
+timer_us => cnt[2].CLK
+timer_us => cnt[3].CLK
+timer_us => cnt[4].CLK
+timer_us => cnt[5].CLK
+timer_us => cnt[6].CLK
+timer_us => cnt[7].CLK
+timer_us => cnt[8].CLK
+timer_us => cnt[9].CLK
+speed[0] => LessThan0.IN10
+speed[1] => LessThan0.IN9
+speed[2] => LessThan0.IN8
+speed[3] => LessThan0.IN7
+speed[4] => LessThan0.IN6
+speed[5] => LessThan0.IN5
+speed[6] => LessThan0.IN4
+speed[7] => LessThan0.IN3
+speed[8] => LessThan0.IN2
+speed[9] => LessThan0.IN1
+
+

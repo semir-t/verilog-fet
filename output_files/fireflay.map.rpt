@@ -1,0 +1,619 @@
+Analysis & Synthesis report for fireflay
+Sat Dec 30 19:24:39 2017
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Parameter Settings for User Entity Instance: motor:comb_152
+ 13. Parameter Settings for User Entity Instance: motor:comb_153
+ 14. Parameter Settings for Inferred Entity Instance: servo:comb_150|lpm_add_sub:Add0
+ 15. Parameter Settings for Inferred Entity Instance: servo:comb_151|lpm_add_sub:Add0
+ 16. Port Connectivity Checks: "motor:comb_153"
+ 17. Port Connectivity Checks: "motor:comb_152"
+ 18. Port Connectivity Checks: "servo:comb_151"
+ 19. Port Connectivity Checks: "servo:comb_150"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+ 22. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Dec 30 19:24:39 2017           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; fireflay                                        ;
+; Top-level Entity Name              ; main                                            ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 261                                             ;
+;     Total combinational functions  ; 261                                             ;
+;     Dedicated logic registers      ; 94                                              ;
+; Total registers                    ; 94                                              ;
+; Total pins                         ; 11                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; main               ; fireflay           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File        ; C:/Users/Semir Tursunovic/Desktop/PSC/main.v                              ;         ;
+; timers.v                         ; yes             ; User Verilog HDL File        ; C:/Users/Semir Tursunovic/Desktop/PSC/timers.v                            ;         ;
+; fsm_led.v                        ; yes             ; User Verilog HDL File        ; C:/Users/Semir Tursunovic/Desktop/PSC/fsm_led.v                           ;         ;
+; servo.v                          ; yes             ; User Verilog HDL File        ; C:/Users/Semir Tursunovic/Desktop/PSC/servo.v                             ;         ;
+; motor.v                          ; yes             ; User Verilog HDL File        ; C:/Users/Semir Tursunovic/Desktop/PSC/motor.v                             ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; db/add_sub_cui.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Semir Tursunovic/Desktop/PSC/db/add_sub_cui.tdf                  ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimated Total logic elements              ; 261                    ;
+;                                             ;                        ;
+; Total combinational functions               ; 261                    ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 57                     ;
+;     -- 3 input functions                    ; 76                     ;
+;     -- <=2 input functions                  ; 128                    ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 121                    ;
+;     -- arithmetic mode                      ; 140                    ;
+;                                             ;                        ;
+; Total registers                             ; 94                     ;
+;     -- Dedicated logic registers            ; 94                     ;
+;     -- I/O registers                        ; 0                      ;
+;                                             ;                        ;
+; I/O pins                                    ; 11                     ;
+; Embedded Multiplier 9-bit elements          ; 0                      ;
+; Maximum fan-out node                        ; timers:comb_3|timer_ms ;
+; Maximum fan-out                             ; 48                     ;
+; Total fan-out                               ; 933                    ;
+; Average fan-out                             ; 2.47                   ;
++---------------------------------------------+------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+; |main                                 ; 261 (15)          ; 94 (0)       ; 0           ; 0            ; 0       ; 0         ; 11   ; 0            ; |main                                                            ; work         ;
+;    |fsm_led:comb_149|                 ; 21 (21)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|fsm_led:comb_149                                           ; work         ;
+;    |motor:comb_152|                   ; 28 (28)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|motor:comb_152                                             ; work         ;
+;    |motor:comb_153|                   ; 7 (7)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|motor:comb_153                                             ; work         ;
+;    |servo:comb_150|                   ; 93 (92)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|servo:comb_150                                             ; work         ;
+;       |lpm_add_sub:Add0|              ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|servo:comb_150|lpm_add_sub:Add0                            ; work         ;
+;          |add_sub_cui:auto_generated| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|servo:comb_150|lpm_add_sub:Add0|add_sub_cui:auto_generated ; work         ;
+;    |servo:comb_151|                   ; 65 (64)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|servo:comb_151                                             ; work         ;
+;       |lpm_add_sub:Add0|              ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|servo:comb_151|lpm_add_sub:Add0                            ; work         ;
+;          |add_sub_cui:auto_generated| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|servo:comb_151|lpm_add_sub:Add0|add_sub_cui:auto_generated ; work         ;
+;    |timers:comb_3|                    ; 32 (32)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|timers:comb_3                                              ; work         ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; led_state                                           ; Mux0                ; yes                    ;
+; left_motor_speed[9]                                 ; Mux0                ; yes                    ;
+; left_motor_speed[8]                                 ; Mux0                ; yes                    ;
+; left_motor_speed[7]                                 ; Mux0                ; yes                    ;
+; left_motor_speed[6]                                 ; Mux0                ; yes                    ;
+; left_motor_speed[5]                                 ; Mux0                ; yes                    ;
+; left_motor_speed[4]                                 ; Mux0                ; yes                    ;
+; left_motor_speed[2]                                 ; Mux0                ; yes                    ;
+; right_motor_speed[9]                                ; Mux0                ; yes                    ;
+; right_motor_speed[8]                                ; Mux0                ; yes                    ;
+; right_motor_speed[7]                                ; Mux0                ; yes                    ;
+; right_motor_speed[6]                                ; Mux0                ; yes                    ;
+; right_motor_speed[5]                                ; Mux0                ; yes                    ;
+; right_motor_speed[4]                                ; Mux0                ; yes                    ;
+; right_motor_speed[2]                                ; Mux0                ; yes                    ;
+; left_servo_speed[0]                                 ; Mux0                ; yes                    ;
+; left_servo_speed[1]                                 ; Mux0                ; yes                    ;
+; left_servo_speed[2]                                 ; Mux0                ; yes                    ;
+; servo_state                                         ; Mux0                ; yes                    ;
+; right_servo_speed[0]                                ; Mux0                ; yes                    ;
+; right_servo_speed[1]                                ; Mux0                ; yes                    ;
+; right_servo_speed[2]                                ; Mux0                ; yes                    ;
+; Number of user-specified and inferred latches = 22  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; servo:comb_151|angle[0,2]              ; Stuck at GND due to stuck port data_in ;
+; servo:comb_150|angle[0,2]              ; Stuck at GND due to stuck port data_in ;
+; servo:comb_150|angle[7]                ; Merged with servo:comb_150|angle[5]    ;
+; servo:comb_151|angle[7]                ; Merged with servo:comb_151|angle[5]    ;
+; servo:comb_151|angle[3,4,6]            ; Merged with servo:comb_151|angle[1]    ;
+; servo:comb_150|angle[3,4,6]            ; Merged with servo:comb_150|angle[1]    ;
+; motor:comb_153|cnt[4]                  ; Merged with motor:comb_152|cnt[4]      ;
+; motor:comb_153|cnt[3]                  ; Merged with motor:comb_152|cnt[3]      ;
+; motor:comb_153|cnt[2]                  ; Merged with motor:comb_152|cnt[2]      ;
+; motor:comb_153|cnt[1]                  ; Merged with motor:comb_152|cnt[1]      ;
+; motor:comb_153|cnt[0]                  ; Merged with motor:comb_152|cnt[0]      ;
+; motor:comb_153|cnt[5]                  ; Merged with motor:comb_152|cnt[5]      ;
+; motor:comb_153|cnt[6]                  ; Merged with motor:comb_152|cnt[6]      ;
+; motor:comb_153|cnt[7]                  ; Merged with motor:comb_152|cnt[7]      ;
+; motor:comb_153|cnt[8]                  ; Merged with motor:comb_152|cnt[8]      ;
+; motor:comb_153|cnt[9]                  ; Merged with motor:comb_152|cnt[9]      ;
+; servo:comb_151|cnt[14]                 ; Merged with servo:comb_150|cnt[14]     ;
+; servo:comb_151|cnt[13]                 ; Merged with servo:comb_150|cnt[13]     ;
+; servo:comb_151|cnt[12]                 ; Merged with servo:comb_150|cnt[12]     ;
+; servo:comb_151|cnt[11]                 ; Merged with servo:comb_150|cnt[11]     ;
+; servo:comb_151|cnt[10]                 ; Merged with servo:comb_150|cnt[10]     ;
+; servo:comb_151|cnt[9]                  ; Merged with servo:comb_150|cnt[9]      ;
+; servo:comb_151|cnt[8]                  ; Merged with servo:comb_150|cnt[8]      ;
+; servo:comb_151|cnt[7]                  ; Merged with servo:comb_150|cnt[7]      ;
+; servo:comb_151|cnt[6]                  ; Merged with servo:comb_150|cnt[6]      ;
+; servo:comb_151|cnt[5]                  ; Merged with servo:comb_150|cnt[5]      ;
+; servo:comb_151|cnt[4]                  ; Merged with servo:comb_150|cnt[4]      ;
+; servo:comb_151|cnt[3]                  ; Merged with servo:comb_150|cnt[3]      ;
+; servo:comb_151|cnt[2]                  ; Merged with servo:comb_150|cnt[2]      ;
+; servo:comb_151|cnt[1]                  ; Merged with servo:comb_150|cnt[1]      ;
+; servo:comb_151|cnt[0]                  ; Merged with servo:comb_150|cnt[0]      ;
+; Total Number of Removed Registers = 37 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 94    ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; servo:comb_150|angle[5]                ; 10      ;
+; servo:comb_151|angle[5]                ; 7       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: motor:comb_152 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; pulse_period   ; 1000  ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: motor:comb_153 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; pulse_period   ; 1000  ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: servo:comb_150|lpm_add_sub:Add0 ;
++------------------------+--------------+------------------------------------------+
+; Parameter Name         ; Value        ; Type                                     ;
++------------------------+--------------+------------------------------------------+
+; LPM_WIDTH              ; 8            ; Untyped                                  ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                  ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                  ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                  ;
+; LPM_PIPELINE           ; 0            ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                  ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                  ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                  ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                  ;
+; USE_WYS                ; OFF          ; Untyped                                  ;
+; STYLE                  ; FAST         ; Untyped                                  ;
+; CBXI_PARAMETER         ; add_sub_cui  ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                           ;
++------------------------+--------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: servo:comb_151|lpm_add_sub:Add0 ;
++------------------------+--------------+------------------------------------------+
+; Parameter Name         ; Value        ; Type                                     ;
++------------------------+--------------+------------------------------------------+
+; LPM_WIDTH              ; 8            ; Untyped                                  ;
+; LPM_REPRESENTATION     ; UNSIGNED     ; Untyped                                  ;
+; LPM_DIRECTION          ; DEFAULT      ; Untyped                                  ;
+; ONE_INPUT_IS_CONSTANT  ; NO           ; Untyped                                  ;
+; LPM_PIPELINE           ; 0            ; Untyped                                  ;
+; MAXIMIZE_SPEED         ; 5            ; Untyped                                  ;
+; REGISTERED_AT_END      ; 0            ; Untyped                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5            ; Untyped                                  ;
+; USE_CS_BUFFERS         ; 1            ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL       ; Untyped                                  ;
+; CARRY_CHAIN_LENGTH     ; 48           ; CARRY_CHAIN_LENGTH                       ;
+; DEVICE_FAMILY          ; Cyclone IV E ; Untyped                                  ;
+; USE_WYS                ; OFF          ; Untyped                                  ;
+; STYLE                  ; FAST         ; Untyped                                  ;
+; CBXI_PARAMETER         ; add_sub_cui  ; Untyped                                  ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE                           ;
++------------------------+--------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "motor:comb_153"    ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; speed[1..0] ; Input ; Info     ; Stuck at GND ;
+; speed[3]    ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++-----------------------------------------------+
+; Port Connectivity Checks: "motor:comb_152"    ;
++-------------+-------+----------+--------------+
+; Port        ; Type  ; Severity ; Details      ;
++-------------+-------+----------+--------------+
+; speed[1..0] ; Input ; Info     ; Stuck at GND ;
+; speed[3]    ; Input ; Info     ; Stuck at GND ;
++-------------+-------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "servo:comb_151"                                                                                                                                                                         ;
++-------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                           ;
++-------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; speed       ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (8 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; speed[7..3] ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
++-------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "servo:comb_150"                                                                                                                                                                         ;
++-------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                                           ;
++-------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; speed       ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (8 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; speed[7..3] ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
++-------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Dec 30 19:24:29 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fireflay -c fireflay
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main
+Info (12021): Found 1 design units, including 1 entities, in source file timers.v
+    Info (12023): Found entity 1: timers
+Info (12021): Found 1 design units, including 1 entities, in source file fsm_led.v
+    Info (12023): Found entity 1: fsm_led
+Info (12021): Found 1 design units, including 1 entities, in source file servo.v
+    Info (12023): Found entity 1: servo
+Info (12021): Found 1 design units, including 1 entities, in source file motor.v
+    Info (12023): Found entity 1: motor
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(32): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(95): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(96): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(97): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(98): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(99): instance has no name
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Warning (10240): Verilog HDL Always Construct warning at main.v(35): inferring latch(es) for variable "led_state", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at main.v(35): inferring latch(es) for variable "left_motor_speed", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at main.v(35): inferring latch(es) for variable "right_motor_speed", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at main.v(35): inferring latch(es) for variable "left_servo_speed", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at main.v(35): inferring latch(es) for variable "right_servo_speed", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at main.v(35): inferring latch(es) for variable "servo_state", which holds its previous value in one or more paths through the always construct
+Warning (10034): Output port "led_test" at main.v(19) has no driver
+Info (10041): Inferred latch for "servo_state" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[0]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[1]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[2]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[3]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[4]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[5]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[6]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[7]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[8]" at main.v(35)
+Info (10041): Inferred latch for "right_servo_speed[9]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[0]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[1]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[2]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[3]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[4]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[5]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[6]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[7]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[8]" at main.v(35)
+Info (10041): Inferred latch for "left_servo_speed[9]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[0]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[1]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[2]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[3]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[4]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[5]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[6]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[7]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[8]" at main.v(35)
+Info (10041): Inferred latch for "right_motor_speed[9]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[0]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[1]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[2]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[3]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[4]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[5]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[6]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[7]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[8]" at main.v(35)
+Info (10041): Inferred latch for "left_motor_speed[9]" at main.v(35)
+Info (10041): Inferred latch for "led_state" at main.v(35)
+Info (12128): Elaborating entity "timers" for hierarchy "timers:comb_3"
+Warning (10230): Verilog HDL assignment warning at timers.v(17): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at timers.v(21): truncated value with size 32 to match size of target (6)
+Warning (10230): Verilog HDL assignment warning at timers.v(26): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at timers.v(29): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "fsm_led" for hierarchy "fsm_led:comb_149"
+Warning (10230): Verilog HDL assignment warning at fsm_led.v(12): truncated value with size 32 to match size of target (10)
+Info (12128): Elaborating entity "servo" for hierarchy "servo:comb_150"
+Warning (10230): Verilog HDL assignment warning at servo.v(27): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at servo.v(39): truncated value with size 32 to match size of target (15)
+Info (12128): Elaborating entity "motor" for hierarchy "motor:comb_152"
+Warning (10230): Verilog HDL assignment warning at motor.v(12): truncated value with size 32 to match size of target (10)
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "servo:comb_150|Add0"
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "servo:comb_151|Add0"
+Info (12130): Elaborated megafunction instantiation "servo:comb_150|lpm_add_sub:Add0"
+Info (12133): Instantiated megafunction "servo:comb_150|lpm_add_sub:Add0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_cui.tdf
+    Info (12023): Found entity 1: add_sub_cui
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "servo_state" merged with LATCH primitive "led_state"
+    Info (13026): Duplicate LATCH primitive "left_servo_speed[1]" merged with LATCH primitive "left_motor_speed[9]"
+    Info (13026): Duplicate LATCH primitive "left_motor_speed[5]" merged with LATCH primitive "left_motor_speed[8]"
+    Info (13026): Duplicate LATCH primitive "right_motor_speed[2]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "right_motor_speed[4]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "right_motor_speed[6]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "right_motor_speed[7]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "left_motor_speed[2]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "left_motor_speed[4]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "left_motor_speed[6]" merged with LATCH primitive "left_motor_speed[7]"
+    Info (13026): Duplicate LATCH primitive "right_servo_speed[1]" merged with LATCH primitive "right_motor_speed[9]"
+    Info (13026): Duplicate LATCH primitive "right_motor_speed[5]" merged with LATCH primitive "right_motor_speed[8]"
+    Info (13026): Duplicate LATCH primitive "left_servo_speed[2]" merged with LATCH primitive "left_servo_speed[0]"
+    Info (13026): Duplicate LATCH primitive "right_servo_speed[2]" merged with LATCH primitive "right_servo_speed[0]"
+Warning (13012): Latch led_state has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[0]
+Warning (13012): Latch left_motor_speed[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[1]
+Warning (13012): Latch left_motor_speed[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[0]
+Warning (13012): Latch left_motor_speed[7] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[0]
+Warning (13012): Latch right_motor_speed[9] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[0]
+Warning (13012): Latch right_motor_speed[8] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[2]
+Warning (13012): Latch left_servo_speed[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[1]
+Warning (13012): Latch right_servo_speed[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state[0]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led_test" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Semir Tursunovic/Desktop/PSC/output_files/fireflay.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Reset"
+Info (21057): Implemented 276 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 265 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 437 megabytes
+    Info: Processing ended: Sat Dec 30 19:24:39 2017
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Semir Tursunovic/Desktop/PSC/output_files/fireflay.map.smsg.
+
+

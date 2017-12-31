@@ -1,0 +1,40 @@
+//////////////////////////////////////////////////////////////////////////////////
+
+// Module Name:    LED_Blink
+// Target Devices: EP4CE6( EP4CE6 Starter Board )
+// Tool versions:  Quartus II 14.1
+// Description: This simple example shows how to make one LED blink with fixed interval.
+//              You can alter the CNT_MAX parameter to change the blink period.
+
+//////////////////////////////////////////////////////////////////////////////////
+
+module LED_Blink( CLK_50M, Reset, LED );
+
+input wire CLK_50M;
+input wire Reset;
+output reg LED;
+
+reg[24:0] count;
+
+parameter CNT_MAX = 25'b1_0111_1101_0111_1000_0100_0000;
+
+always@( posedge CLK_50M )
+begin
+	if( Reset == 1 || count == CNT_MAX )
+		count <= 0; 
+	else
+		count <= count + 1'b1;
+end
+
+always@( posedge CLK_50M )
+begin
+	if( Reset == 1 )
+		LED <= 0;
+	else
+	begin
+	if( count == CNT_MAX )
+		LED <= ~LED; // toggle LED state
+	end
+end
+
+endmodule

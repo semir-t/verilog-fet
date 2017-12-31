@@ -1,0 +1,26 @@
+module motor(motor_pin,timer_us,speed_coef);
+
+output reg motor_pin;
+input wire timer_ms;
+real [7:0] speed_coef;
+
+reg [9:0] cnt;
+parameter pulse_period = 1000;
+reg [9:0] speed = rtoi(speed_coef * pulse_period)
+always @(posedge timer_us)
+begin
+	if(cnt == pulse_period)
+	begin
+			cnt <= 0;
+	end
+	cnt <= cnt + 1;
+	if(cnt < speed)
+		motor_pin = 1;
+	else
+		motro_pin = 0;
+end
+
+
+
+
+endmodule

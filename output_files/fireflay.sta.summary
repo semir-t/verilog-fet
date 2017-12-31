@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'timers:comb_3|timer_us'
+Slack : -5.836
+TNS   : -90.278
+
+Type  : Slow 1200mV 85C Model Setup 'timers:comb_3|timer_ms'
+Slack : -3.904
+TNS   : -126.176
+
+Type  : Slow 1200mV 85C Model Setup 'CLK_50M'
+Slack : -1.757
+TNS   : -9.204
+
+Type  : Slow 1200mV 85C Model Setup 'state[0]'
+Slack : -0.380
+TNS   : -2.391
+
+Type  : Slow 1200mV 85C Model Hold 'state[0]'
+Slack : -0.729
+TNS   : -4.474
+
+Type  : Slow 1200mV 85C Model Hold 'timers:comb_3|timer_us'
+Slack : -0.406
+TNS   : -0.406
+
+Type  : Slow 1200mV 85C Model Hold 'CLK_50M'
+Slack : -0.036
+TNS   : -0.036
+
+Type  : Slow 1200mV 85C Model Hold 'timers:comb_3|timer_ms'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK_50M'
+Slack : -3.000
+TNS   : -13.409
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'state[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'timers:comb_3|timer_ms'
+Slack : -1.487
+TNS   : -69.889
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'timers:comb_3|timer_us'
+Slack : -1.487
+TNS   : -59.480
+
+Type  : Slow 1200mV 0C Model Setup 'timers:comb_3|timer_us'
+Slack : -5.278
+TNS   : -80.584
+
+Type  : Slow 1200mV 0C Model Setup 'timers:comb_3|timer_ms'
+Slack : -3.464
+TNS   : -112.078
+
+Type  : Slow 1200mV 0C Model Setup 'CLK_50M'
+Slack : -1.579
+TNS   : -7.803
+
+Type  : Slow 1200mV 0C Model Setup 'state[0]'
+Slack : -0.490
+TNS   : -3.029
+
+Type  : Slow 1200mV 0C Model Hold 'state[0]'
+Slack : -0.660
+TNS   : -3.970
+
+Type  : Slow 1200mV 0C Model Hold 'timers:comb_3|timer_us'
+Slack : -0.328
+TNS   : -0.328
+
+Type  : Slow 1200mV 0C Model Hold 'CLK_50M'
+Slack : 0.025
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'timers:comb_3|timer_ms'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK_50M'
+Slack : -3.000
+TNS   : -13.409
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'state[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'timers:comb_3|timer_ms'
+Slack : -1.487
+TNS   : -69.889
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'timers:comb_3|timer_us'
+Slack : -1.487
+TNS   : -59.480
+
+Type  : Fast 1200mV 0C Model Setup 'timers:comb_3|timer_us'
+Slack : -2.057
+TNS   : -17.390
+
+Type  : Fast 1200mV 0C Model Setup 'timers:comb_3|timer_ms'
+Slack : -1.083
+TNS   : -28.853
+
+Type  : Fast 1200mV 0C Model Setup 'CLK_50M'
+Slack : -0.160
+TNS   : -0.411
+
+Type  : Fast 1200mV 0C Model Setup 'state[0]'
+Slack : -0.121
+TNS   : -0.636
+
+Type  : Fast 1200mV 0C Model Hold 'state[0]'
+Slack : -0.317
+TNS   : -1.902
+
+Type  : Fast 1200mV 0C Model Hold 'timers:comb_3|timer_us'
+Slack : -0.287
+TNS   : -0.287
+
+Type  : Fast 1200mV 0C Model Hold 'CLK_50M'
+Slack : -0.182
+TNS   : -0.182
+
+Type  : Fast 1200mV 0C Model Hold 'timers:comb_3|timer_ms'
+Slack : 0.178
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK_50M'
+Slack : -3.000
+TNS   : -10.455
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'state[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'timers:comb_3|timer_ms'
+Slack : -1.000
+TNS   : -47.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'timers:comb_3|timer_us'
+Slack : -1.000
+TNS   : -40.000
+
+------------------------------------------------------------
